@@ -1,13 +1,15 @@
-import { Box, Grid } from "@chakra-ui/react";
+import { Box, Flex, Grid } from "@chakra-ui/react";
 import React from "react";
 import { ColorModeSwitcher } from "components/ColorModeSwitcher";
 
 const index = () => {
   return (
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-      </Grid>
+    <Box position="relative" fontSize="xl" p={3} minH="300vh">
+      <Box position="fixed" top={3} backdropBlur="20px">
+        <Flex justifyContent="flex-end">
+          <ColorModeSwitcher />
+        </Flex>
+      </Box>
     </Box>
   );
 };
