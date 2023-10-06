@@ -1,14 +1,9 @@
-import {
-  Box,
-  ChakraProvider,
-  ColorModeScript,
-  Grid,
-  theme,
-} from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript, theme } from "@chakra-ui/react";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import * as serviceWorker from "./serviceWorker";
-import { ColorModeSwitcher } from "components/ColorModeSwitcher";
+import Routers from "routers";
+import { BrowserRouter } from "react-router-dom";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -18,11 +13,9 @@ root.render(
   <React.StrictMode>
     <ColorModeScript />
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-        </Grid>
-      </Box>
+      <BrowserRouter>
+        <Routers />
+      </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>
 );
