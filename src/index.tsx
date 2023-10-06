@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import Routers from "routers";
 import { BrowserRouter } from "react-router-dom";
 import { theme } from "theme";
+import "assets/css/base.scss";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
