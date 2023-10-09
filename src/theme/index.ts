@@ -13,7 +13,18 @@ import { textareaStyles } from "./components/textarea";
 import { switchStyles } from "./components/switch";
 import { linkStyles } from "./components/link";
 
+const breakpoints = {
+  sm: "320px",
+  "2sm": "380px",
+  md: "768px",
+  lg: "960px",
+  xl: "1200px",
+  "2xl": "1600px",
+  "3xl": "1920px",
+};
+
 export const theme = extendTheme(
+  breakpoints,
   globalStyles, // global styles
   colors, //  custom colors
   badgeStyles, // badge styles

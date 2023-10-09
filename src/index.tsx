@@ -6,20 +6,23 @@ import Routers from "routers";
 import { BrowserRouter } from "react-router-dom";
 import { theme } from "theme";
 import "assets/css/base.scss";
+import { SidebarProvider } from "contexts/SidebarContext";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
 const root = ReactDOM.createRoot(container);
 
 root.render(
-  <React.StrictMode>
+  <>
     <ColorModeScript />
     <ChakraProvider theme={theme}>
-      <BrowserRouter>
-        <Routers />
-      </BrowserRouter>
+      <SidebarProvider>
+        <BrowserRouter basename="/">
+          <Routers />
+        </BrowserRouter>
+      </SidebarProvider>
     </ChakraProvider>
-  </React.StrictMode>
+  </>
 );
 
 // If you want your app to work offline and load faster, you can change
