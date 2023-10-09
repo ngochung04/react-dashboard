@@ -24,4 +24,4 @@ jobs:
         server: ftp.hungdn.fun
         username: dashboard@hungdn.fun
         password: ${{ secrets.PASS }}
-        local-dir: build
+        local-dir: build/
