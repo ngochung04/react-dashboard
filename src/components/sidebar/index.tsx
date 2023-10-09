@@ -1,5 +1,7 @@
 import { Box, Flex, Stack, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
+import { routes } from "routers";
+import SidebarItem from "./SidebarItem";
 
 const Sidebar = () => {
   let variantChange = "0.2s linear";
@@ -27,7 +29,9 @@ const Sidebar = () => {
           <Flex direction="column" height="100%" pt="25px" borderRadius="30px">
             <Stack direction="column" mt="8px" mb="auto">
               <Box ps="20px" pe={{ lg: "16px", "2xl": "16px" }}>
-                {/* <Links routes={routes} /> */}
+                {routes.map((route, index) => {
+                  return <SidebarItem route={route} key={index} />;
+                })}
               </Box>
             </Stack>
           </Flex>
