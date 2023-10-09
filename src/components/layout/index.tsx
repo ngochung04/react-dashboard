@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 
 import Sidebar from "components/sidebar";
 import { SidebarProvider } from "contexts/SidebarContext";
+import Navbar from "components/navbar";
 
 const Layout = () => {
   return (
@@ -22,7 +23,10 @@ const Layout = () => {
         transitionDuration=".2s, .2s, .35s"
         transitionProperty="top, bottom, width"
         transitionTimingFunction="linear, linear, ease"
+        pt="111px"
+        px={{ base: "0.8rem", md: "1.6rem" }}
       >
+        <Navbar />
         <Outlet />
         {/* <Portal>
           <Box>
