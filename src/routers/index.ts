@@ -5,19 +5,19 @@ import Default from "pages/default";
 
 export const routes: RouteObject[] = [
   {
-    path: "/",
-    Component: Layout,
-    children: [
-      {
-        path: "default",
-        Component: Default,
-      },
-    ],
+    path: "",
+    Component: Default,
   },
 ];
 
 const Routers = () => {
-  return useRoutes(routes);
+  return useRoutes([
+    {
+      path: "/",
+      Component: Layout,
+      children: routes,
+    },
+  ]);
 };
 
 export default Routers;

@@ -1,5 +1,5 @@
 import { Box, Button, Flex } from "@chakra-ui/react";
-import React, { useContext } from "react";
+import React from "react";
 import { ColorModeSwitcher } from "components/ColorModeSwitcher";
 import { useSidebarContext } from "contexts/SidebarContext";
 

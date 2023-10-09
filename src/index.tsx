@@ -6,7 +6,6 @@ import Routers from "routers";
 import { BrowserRouter } from "react-router-dom";
 import { theme } from "theme";
 import "assets/css/base.scss";
-import { SidebarProvider } from "contexts/SidebarContext";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -16,11 +15,9 @@ root.render(
   <>
     <ColorModeScript />
     <ChakraProvider theme={theme}>
-      <SidebarProvider>
-        <BrowserRouter basename="/">
-          <Routers />
-        </BrowserRouter>
-      </SidebarProvider>
+      <BrowserRouter basename="/">
+        <Routers />
+      </BrowserRouter>
     </ChakraProvider>
   </>
 );

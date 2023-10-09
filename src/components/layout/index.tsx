@@ -1,21 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Box } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 
 import Sidebar from "components/sidebar";
-import {
-  SidebarContext,
-  SidebarProvider,
-  TSidebarContext,
-} from "contexts/SidebarContext";
+import { SidebarProvider } from "contexts/SidebarContext";
 
 const Layout = () => {
-  const context = useContext(SidebarContext) as TSidebarContext;
-  console.log(context?.isOpen);
   return (
-    <Box>
+    <SidebarProvider>
       <Sidebar />
-
       <Box
         float="right"
         minHeight="100vh"
@@ -63,7 +56,7 @@ const Layout = () => {
           <Footer />
         </Box> */}
       </Box>
-    </Box>
+    </SidebarProvider>
   );
 };
 
