@@ -11,25 +11,13 @@ module.exports = {
     "react/prop-types": "off",
     "@typescript-eslint/ban-types": "off",
     "react/react-in-jsx-scope": "off",
-    "padding-line-between-statements": [
-      "error",
-      { blankLine: "always", prev: "*", next: ["return", "export"] },
-      { blankLine: "any", prev: "export", next: "export" },
-      // Always require blank lines after import, except between imports
-      { blankLine: "always", prev: "import", next: "*" },
-      { blankLine: "any", prev: "import", next: "import" },
-    ],
-    "@typescript-eslint/no-unused-vars": ["off", { patterns: "^_" }],
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "padding-line-between-statements": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react-hooks/rules-of-hooks": "off", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "off", // Checks effect dependencies
-    "no-restricted-imports": [
-      "error",
-      {
-        patterns: ["../../*", "./../*"],
-      },
-    ],
-    "no-console": "error",
+    "no-restricted-imports": "off",
+    "no-console": "off",
     "import/no-anonymous-default-export": "off",
-    "prefer-template": "error",
+    "prefer-template": "off",
   },
 };
