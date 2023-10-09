@@ -11,7 +11,7 @@ const DefaultPages = () => {
       <Box position="fixed" top={3} backdropBlur="20px">
         <Flex justifyContent="flex-end">
           <ColorModeSwitcher />
-          <Button onClick={onToggle}>Click</Button>
+          <Button onClick={onToggle}>Click me</Button>
         </Flex>
       </Box>
     </Box>
