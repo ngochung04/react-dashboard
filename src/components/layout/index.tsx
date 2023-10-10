@@ -1,12 +1,18 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import { Outlet } from "react-router-dom";
+import { Outlet, redirect, useLocation } from "react-router-dom";
 
 import Sidebar from "components/sidebar";
 import { SidebarProvider } from "contexts/SidebarContext";
 import Navbar from "components/navbar";
+import { Navigate } from "react-router-dom";
 
 const Layout = () => {
+  const location = useLocation();
+  console.log(location);
+
+  if (location.key === "default") return <Navigate to="/default" />;
+
   return (
     <SidebarProvider>
       <Sidebar />
@@ -28,6 +34,7 @@ const Layout = () => {
       >
         <Navbar />
         <Outlet />
+
         {/* <Portal>
           <Box>
             <Navbar

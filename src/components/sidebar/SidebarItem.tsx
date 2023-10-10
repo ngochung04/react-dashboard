@@ -7,7 +7,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import React from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { IRouteItem } from "routers";
 
 interface Props {
@@ -16,7 +16,6 @@ interface Props {
 
 const SidebarItem = ({ route }: Props) => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const activeColor = useColorModeValue("gray.700", "white");
   const inactiveColor = useColorModeValue(
@@ -28,7 +27,6 @@ const SidebarItem = ({ route }: Props) => {
   const brandColor = useColorModeValue("brand.500", "brand.400");
 
   const activeRoute = () => {
-    if (location.pathname === "/") return navigate("/default");
     return location.pathname.includes(route.path);
   };
 
