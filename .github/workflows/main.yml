@@ -12,10 +12,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
+        cache: 'npm'
         
     - name: 🔨 Build Project
       run: |
-        npm install
+        npm ci
         npm run build
     
     - name: 📂 Sync files
@@ -24,4 +25,4 @@ jobs:
         server: ftp.hungdn.fun
         username: dashboard@hungdn.fun
         password: ${{ secrets.PASS }}
-        local-dir: build
+        local-dir: build/
